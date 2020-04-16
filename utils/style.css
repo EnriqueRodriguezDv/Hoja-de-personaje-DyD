@@ -1,0 +1,725 @@
+@font-face {
+  font-family: dancing;
+  src: url(./fonts/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: caveat;
+  src: url(./fonts/Caveat-Regular.ttf);
+}
+.point__equipment .point__equipment__cash, .point__backstory, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--failures, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--sucesses, .point__knock__roll, .point__knock__roll .point__knock__roll__dead, .point__knock__roll .point__knock__roll__rollhit, .point__knock__basic__speed, .point__knock__basic__iniciative, .point__knock__basic__shield .point__knock__basic__shield--part2, .point__knock__basic, .point__knock, .point__characteristic__secundary--bonus, .point__characteristic__secundary--inspiration .point__characteristic__secundary--inspiration--checkbox, .point__characteristic__secundary--inspiration, .point__characteristic .point__characteristic__principal div, .point__characteristic .point__characteristic__principal, .header .header__description .header__container--description .header__container--description--exp, .header .header__description .header__container--description .header__container--description--alignment, .header .header__description .header__container--description .header__container--description--race, .header .header__description .header__container--description .header__container--description--playerName, .header .header__description .header__container--description .header__container--description--backstory, .header .header__description .header__container--description .header__container--description--level, .header .header__description .header__container--description .header__container--description--class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header__description .header__container--description input, .header .header__description .header__container--description select {
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  text-align-last: center;
+  font-size: 25px;
+  font-family: caveat;
+  margin-bottom: 15px;
+}
+
+.point__characteristic__secundary--abilities, .point__characteristic__secundary--salvation {
+  border: 5px double black;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding-top: 7px;
+}
+.point__characteristic__secundary--abilities ul, .point__characteristic__secundary--salvation ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.point__characteristic__secundary--abilities ul li, .point__characteristic__secundary--salvation ul li {
+  display: flex;
+  margin: 4px;
+}
+.point__characteristic__secundary--abilities ul li span, .point__characteristic__secundary--salvation ul li span {
+  width: 20px;
+  border: 1px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin: 0 5px;
+}
+.point__characteristic__secundary--abilities p, .point__characteristic__secundary--salvation p {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  margin: 0 auto;
+  width: 1024px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pointRed {
+  background-color: #EC2127 !important;
+}
+
+.header {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header__name {
+  background-image: url("./images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 424px;
+  height: inherit;
+  position: relative;
+}
+.header .header__name input {
+  position: absolute;
+  bottom: 72px;
+  left: 47px;
+  right: 0;
+  width: 300px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 30px;
+  font-family: dancing;
+  padding: 5px 0;
+  text-align: center;
+}
+.header .header__description {
+  width: 600px;
+  height: inherit;
+  position: relative;
+}
+.header .header__description .header__container--description {
+  width: 550px;
+  height: 115px;
+  display: grid;
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  grid-template-columns: 25% 8.4% 33.3% 33.3%;
+  grid-template-rows: 50% 50%;
+  border: 5px double #EC2127;
+}
+.header .header__description .header__container--description li {
+  position: relative;
+}
+.header .header__description .header__container--description select:hover {
+  cursor: pointer;
+}
+.header .header__description .header__container--description input {
+  padding-bottom: 2px;
+}
+.header .header__description .header__container--description p {
+  position: absolute;
+  bottom: 2px;
+  font-size: 14px;
+  left: 10px;
+}
+.header .header__description .header__container--description .header__container--description--class {
+  grid-column: 1/2;
+}
+.header .header__description .header__container--description .header__container--description--level {
+  grid-column: 2/3;
+}
+.header .header__description .header__container--description .header__container--description--backstory {
+  grid-column: 3/4;
+}
+.header .header__description .header__container--description .header__container--description--playerName {
+  grid-column: 4/5;
+}
+.header .header__description .header__container--description .header__container--description--race {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+.header .header__description .header__container--description .header__container--description--alignment {
+  grid-column: 3/4;
+  grid-row: 2;
+}
+.header .header__description .header__container--description .header__container--description--exp {
+  grid-column: 4/5;
+  grid-row: 2;
+}
+
+.point {
+  width: 1024px;
+  height: 1275px;
+  display: grid;
+  grid-template-columns: repeat(3, 341.3px);
+  grid-template-rows: 474px 400px 400px;
+}
+
+.point__characteristic {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.point__characteristic .point__characteristic__principal {
+  grid-column: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgba(236, 33, 39, 0.9);
+  border-radius: 10px;
+}
+.point__characteristic .point__characteristic__principal div {
+  width: 85px;
+  height: 110px;
+  border: 5px double black;
+  border-radius: 15px;
+  position: relative;
+  background-color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.point__characteristic h2 {
+  font-size: 50px;
+}
+.point__characteristic .point__characteristic__principal input {
+  position: absolute;
+  bottom: -15px;
+  width: 35px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 5px double black;
+  left: 10px;
+  font-family: caveat;
+  text-align: center;
+  font-size: 25px;
+}
+
+.point__characteristic__secundary {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: 8% 8% 24% 60%;
+}
+
+.point__characteristic__secundary--inspiration {
+  grid-row: 1/2;
+  position: relative;
+}
+.point__characteristic__secundary--inspiration h2 {
+  border: 5px double black;
+  padding: 5px 35px;
+  font-size: 17px;
+  position: absolute;
+  right: 16px;
+  border-radius: 7px;
+}
+.point__characteristic__secundary--inspiration .point__characteristic__secundary--inspiration--checkbox {
+  width: 40px;
+  height: 40px;
+  border: 5px solid black;
+  position: absolute;
+  left: 15px;
+}
+.point__characteristic__secundary--inspiration .point__characteristic__secundary--inspiration--checkbox:hover {
+  cursor: pointer;
+}
+.point__characteristic__secundary--inspiration .point__characteristic__secundary--inspiration--checkbox--pointRed {
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/dragon.png);
+  background-size: contain;
+}
+
+.point__characteristic__secundary--bonus {
+  position: relative;
+}
+.point__characteristic__secundary--bonus input {
+  width: 40px;
+  height: 40px;
+  border: 5px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  font-family: caveat;
+  text-align: center;
+  font-size: 30px;
+}
+.point__characteristic__secundary--bonus h2 {
+  border: 5px double black;
+  font-size: 15px;
+  padding: 3px 33px;
+  margin-left: 25px;
+  border-radius: 7px;
+}
+
+.point__knock {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  flex-direction: column;
+  background-color: #EC2127;
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.point__knock__basic {
+  width: 100%;
+  height: 118.5px;
+}
+
+.point__knock__basic__speed, .point__knock__basic__iniciative, .point__knock__basic__shield {
+  width: 110px;
+  height: 120px;
+  margin: 2.825px;
+}
+.point__knock__basic__speed h3, .point__knock__basic__iniciative h3, .point__knock__basic__shield h3 {
+  font-size: 13px;
+}
+
+.point__knock__basic__shield .point__knock__basic__shield--part2, .point__knock__basic__shield .point__knock__basic__shield--part1 {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  border: 3px double black;
+}
+
+.point__knock__basic__shield {
+  position: relative;
+}
+.point__knock__basic__shield .point__knock__basic__shield--part1 {
+  border-bottom: none;
+  z-index: 1;
+  top: 9px;
+  border-radius: 20%;
+  text-align: center;
+}
+.point__knock__basic__shield .point__knock__basic__shield--part1 h3 {
+  padding-top: 5px;
+}
+.point__knock__basic__shield .point__knock__basic__shield--part2 {
+  border-top: none;
+  bottom: 5px;
+  border-radius: 50%;
+  height: 90px;
+}
+.point__knock__basic__shield .point__knock__basic__shield--part2 span {
+  padding-top: 20px;
+  font-family: caveat;
+  font-size: 40px;
+  padding-right: 10px;
+}
+
+.point__knock__basic__speed, .point__knock__basic__iniciative {
+  width: 90px;
+  height: 90px;
+  border: 5px double black;
+  border-radius: 10px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.point__knock__basic__speed p, .point__knock__basic__iniciative p {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: caveat;
+}
+
+.point__knock__hit .point__knock__hit__temporary, .point__knock__hit .point__knock__hit__current {
+  margin: 5px;
+  border: 5px double black;
+  border-radius: 10px;
+  margin-top: 0;
+  background-color: white;
+}
+.point__knock__hit .point__knock__hit__temporary textarea, .point__knock__hit .point__knock__hit__current textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  height: 65px;
+  font-family: caveat;
+  font-size: 20px;
+}
+.point__knock__hit .point__knock__hit__temporary h3, .point__knock__hit .point__knock__hit__current h3 {
+  text-align: center;
+}
+
+.point__knock__hit {
+  width: 100%;
+  height: 237px;
+}
+.point__knock__hit .point__knock__hit__current {
+  padding: 2px;
+  height: 115px;
+}
+.point__knock__hit .point__knock__hit__current p {
+  width: 100%;
+}
+.point__knock__hit .point__knock__hit__current p input {
+  width: 150px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-family: caveat;
+  font-size: 16px;
+  text-align: center;
+}
+.point__knock__hit .point__knock__hit__current textarea {
+  height: 69px;
+  font-family: caveat;
+  font-size: 20px;
+}
+.point__knock__roll .point__knock__roll__dead, .point__knock__roll .point__knock__roll__rollhit {
+  width: 150px;
+  height: 90px;
+  border: 5px double black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.point__knock__roll .point__knock__roll__dead h3, .point__knock__roll .point__knock__roll__rollhit h3 {
+  font-size: 15px;
+  text-align: center;
+}
+
+.point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--failures, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--sucesses {
+  width: 100%;
+  height: 30px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--failures .point__knock__roll__dead--failures--right, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--failures .point__knock__roll__dead--failures--center, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--failures .point__knock__roll__dead--failures--left, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--sucesses .point__knock__roll__dead--sucesses--right, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--sucesses .point__knock__roll__dead--sucesses--center, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--sucesses .point__knock__roll__dead--sucesses--left {
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  border-radius: 50%;
+  z-index: 2;
+  background-color: white;
+}
+
+.point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--failures .point__knock__roll__dead--failures--connection, .point__knock__roll .point__knock__roll__dead .point__knock__roll__dead--sucesses .point__knock__roll__dead--sucesses--connection {
+  position: absolute;
+  width: 78px;
+  height: 2px;
+  border: 3px solid black;
+  right: 2px;
+}
+
+.point__knock__roll {
+  width: 100%;
+  height: 118.5px;
+}
+.point__knock__roll .point__knock__roll__rollhit {
+  margin-right: 2px;
+}
+.point__knock__roll .point__knock__roll__rollhit p input {
+  width: 105px;
+  height: 17px;
+  border-bottom: 2px solid #EEEEEE;
+}
+.point__knock__roll .point__knock__roll__rollhit input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  font-family: caveat;
+  font-size: 16px;
+}
+.point__knock__roll .point__knock__roll__dead {
+  margin-left: 2px;
+}
+.vspoint:hover {
+  cursor: pointer;
+}
+
+.point__backstory .point__backstory__defects, .point__backstory .point__backstory__links, .point__backstory .point__backstory__ideal, .point__backstory .point__backstory__personality {
+  width: 300px;
+  height: 100px;
+  border: 5px double black;
+  border-radius: 10px;
+  background-color: white;
+}
+.point__backstory .point__backstory__defects textarea, .point__backstory .point__backstory__links textarea, .point__backstory .point__backstory__ideal textarea, .point__backstory .point__backstory__personality textarea {
+  width: 100%;
+  height: 80%;
+  border: none;
+  resize: none;
+  font-family: caveat;
+  font-size: 17px;
+}
+
+.point__backstory {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2px;
+  text-align: center;
+  background-color: #EC2127;
+  border-radius: 10px;
+  margin: 2px 10px;
+}
+.point__weapons {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  border: 5px double black;
+  border-radius: 10px;
+  margin: 5px;
+  width: 321.3px;
+  height: 380px;
+  text-align: center;
+}
+.point__weapons textarea {
+  font-family: caveat;
+  font-size: 20px;
+  width: 320px;
+  height: 258px;
+  border: none;
+  resize: none;
+}
+
+.point__weapons__equipped__hurt--input, .point__weapons__equipped__name--input {
+  width: 120px;
+  border-radius: 5px;
+  font-family: caveat;
+  font-size: 14px;
+  text-align: center;
+}
+
+.point__weapons__equipped__hurt--p, .point__weapons__equipped__bonus--p, .point__weapons__equipped__name--p {
+  font-size: 14px;
+}
+
+.point__weapons__equipped {
+  width: 321.3px;
+  height: 95px;
+  display: flex;
+}
+
+.point__weapons__equipped__name {
+  width: 130px;
+}
+
+.point__weapons__equipped__name--p {
+  margin: 2px;
+}
+
+.point__weapons__equipped__name--input {
+  margin: 2px;
+  border-color: #EC2127;
+}
+
+.point__weapons__equipped__bonus {
+  width: 60px;
+}
+
+.point__weapons__equipped__bonus--p {
+  margin: 2px;
+}
+
+.point__weapons__equipped__bonus--input {
+  margin: 2px;
+  border-radius: 5px;
+  width: 50px;
+  background-color: #EC2127;
+  border-color: #EC2127;
+  font-size: 14px;
+  font-family: caveat;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.point__weapons__equipped__hurt {
+  width: 130px;
+}
+
+.point__weapons__equipped__hurt--p {
+  margin: 2px;
+}
+
+.point__weapons__equipped__hurt--input {
+  margin: 2px;
+  background-color: #EC2127;
+  border-color: #EC2127;
+  color: whitesmoke;
+}
+
+.point__features {
+  grid-row: 2/4;
+  grid-column: 3/4;
+  margin: 5px;
+  border: 5px double black;
+  border-radius: 10px;
+  padding: 3px;
+}
+.point__features textarea {
+  width: 313px;
+  height: 748px;
+  border: none;
+  resize: none;
+  font-family: caveat;
+  font-size: 20px;
+}
+.point__features h3 {
+  text-align: center;
+}
+
+.point__competencies {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+.point__competencies p {
+  border: 5px double black;
+  margin: 10px 3px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.point__competencies p input {
+  width: 45px;
+  height: 45px;
+  border: 4px solid black;
+  border-radius: 25px;
+  margin-right: 27px;
+  text-align: center;
+  font-family: caveat;
+  font-size: 38px;
+}
+.point__competencies .point__competencies__area {
+  border: 5px double black;
+  margin: 3px;
+  border-radius: 10px;
+  height: 323px;
+}
+.point__competencies .point__competencies__area textarea {
+  margin: 3px;
+  margin-bottom: 0;
+  width: 316px;
+  height: 290px;
+  border: none;
+  resize: none;
+  font-family: caveat;
+  font-size: 20px;
+  text-align: center;
+}
+.point__competencies .point__competencies__area h3 {
+  text-align: center;
+}
+
+.point__equipment .point__equipment__cash .point__equipment__cash__platinum, .point__equipment .point__equipment__cash .point__equipment__cash__gold, .point__equipment .point__equipment__cash .point__equipment__cash__electro, .point__equipment .point__equipment__cash .point__equipment__cash__silver, .point__equipment .point__equipment__cash .point__equipment__cash__copper {
+  position: relative;
+}
+.point__equipment .point__equipment__cash .point__equipment__cash__platinum p, .point__equipment .point__equipment__cash .point__equipment__cash__gold p, .point__equipment .point__equipment__cash .point__equipment__cash__electro p, .point__equipment .point__equipment__cash .point__equipment__cash__silver p, .point__equipment .point__equipment__cash .point__equipment__cash__copper p {
+  position: absolute;
+  border: 3px solid black;
+  font-size: 9px;
+  padding: 3px;
+  border-radius: 15px;
+  z-index: 2;
+  left: -18px;
+  top: 6px;
+  padding-right: 20px;
+  background-color: white;
+}
+.point__equipment .point__equipment__cash .point__equipment__cash__platinum input, .point__equipment .point__equipment__cash .point__equipment__cash__gold input, .point__equipment .point__equipment__cash .point__equipment__cash__electro input, .point__equipment .point__equipment__cash .point__equipment__cash__silver input, .point__equipment .point__equipment__cash .point__equipment__cash__copper input {
+  width: 50px;
+  height: 25px;
+  border: 5px double black;
+  border-radius: 20px;
+  z-index: 3;
+  position: relative;
+  text-align: center;
+  font-family: caveat;
+  font-size: 20px;
+}
+
+.point__equipment {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  margin: 3px;
+  border: 5px double black;
+  border-radius: 10px;
+  height: 375px;
+  padding: 3px;
+  display: grid;
+  grid-template-columns: 22% 78%;
+  grid-template-rows: 75% 19% 6%;
+  position: relative;
+  z-index: 1;
+}
+.point__equipment .point__equipment__cash {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.point__equipment .point__equipment__area {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+.point__equipment .point__equipment__area .point__equipment__area__description {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 18px;
+}
+.point__equipment .point__equipment__area .point__equipment__area__description div {
+  display: flex;
+  align-items: center;
+}
+.point__equipment .point__equipment__area .point__equipment__area__description div p {
+  margin-right: 2px;
+  font-size: 12px;
+}
+.point__equipment .point__equipment__area .point__equipment__area__inputArea {
+  display: flex;
+  justify-content: space-between;
+}
+.point__equipment .point__equipment__area .point__equipment__area__inputArea .point__equipment__area__inputArea--inputText {
+  width: 187px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  border-color: #EC2127;
+  font-family: caveat;
+  font-size: 16px;
+}
+.point__equipment .point__equipment__area .point__equipment__area__inputArea .point__equipment__area__inputArea--inputNumber {
+  width: 50px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  border-color: #EC2127;
+  background-color: #EC2127;
+  font-family: caveat;
+  font-size: 16px;
+  color: whitesmoke;
+}
+.point__equipment .point__equipment__area textarea {
+  width: 249px;
+  height: 315px;
+  border: none;
+  resize: none;
+  font-family: caveat;
+  font-size: 20px;
+}
+.point__equipment h3 {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "hoja_personaje_dyd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startrol": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "Enrique Rodríguez <juanenriquerodriguezgarcia87@gmail.com>",
+  "license": "ISC",
+  "description": "dungeon and dragon",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.3"
+  }
+}

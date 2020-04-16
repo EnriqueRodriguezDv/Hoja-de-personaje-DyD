@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./utils/images/dragon.png" type="image/png">
+    <link rel="stylesheet" href="./utils/style.css" media="all">
+    <script defer src="./index.ts"></script>
+    <title>Hoja de personaje</title>
+</head>
+<body onkeyup="player()">
+    <header class="header">
+        <section class="header__name">
+            <input type="text">
+        </section>
+        <section class="header__description">
+            <ul class="header__container--description">
+                <li class="header__container--description--class">
+                    <select name="" id="class">
+                        <option value="" label=""></option>
+                        <option value="Barbaro" label="">Bárbaro</option>
+                        <option value="Bardo" label="">Bardo</option>
+                        <option value="Brujo" label="">Brujo</option>
+                        <option value="Clerigo" label="">Clérigo</option>
+                        <option value="Druida" label="">Druida</option>
+                        <option value="Explorador" label="">Explorador</option>
+                        <option value="Guerrero" label="">Guerrero</option>
+                        <option value="Hechizero" label="">Hechizero</option>
+                        <option value="Mago" label="">Mago</option>
+                        <option value="Monje" label="">Monje</option>
+                        <option value="Paladin" label="">Paladín</option>
+                        <option value="Pícaro" label="">Pícaro</option>
+                    </select>
+                    <p>Clase Y Nivel</p>
+                </li>
+                <li class="header__container--description--level">
+                    <select name="" id="level">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                    </select>
+                </li>
+                <li class="header__container--description--backstory">
+                    <select name="" id="">
+                        <option value=""></option>
+                        <option value="">Acólito</option>
+                        <option value="">Animador</option>
+                        <option value="">Artesano Gremial</option>
+                        <option value="">Charlatán</option>
+                        <option value="">Criminal</option>
+                        <option value="">Ermitaño</option>
+                        <option value="">Erudito</option>
+                        <option value="">Héroe del pueblo</option>
+                        <option value="">Huérfano</option>
+                        <option value="">Marinero</option>
+                        <option value="">Noble</option>
+                        <option value="">Salvaje</option>
+                        <option value="">Soldado</option>
+                    </select>
+                    <p>Transfondo</p>
+                </li>
+                <li class="header__container--description--playerName">
+                    <input type="text">
+                    <p>Nombre del Jugador</p>
+                </li>
+                <li class="header__container--description--race">
+                    <select name="" id="">
+                        <option value=""></option>
+                        <option value="">Enano</option>
+                        <option value="">Elfo</option>
+                        <option value="">Mediano</option>
+                        <option value="">Humano</option>
+                        <option value="">Dracónido</option>
+                        <option value="">Gnomo</option>
+                        <option value="">Semielfo</option>
+                        <option value="">Semiorco</option>
+                        <option value="">Tiefling</option>
+                    </select>
+                    <p>Raza</p>
+                    <!-- <select name="" id=""></select> meter en js -->
+                </li>
+                <li class="header__container--description--alignment">
+                    <select name="" id="">
+                        <option value=""></option>
+                        <option value="">Legal Bueno</option>
+                        <option value="">Neutral Bueno</option>
+                        <option value="">Caótico Bueno</option>
+                        <option value="">Legal Neutral</option>
+                        <option value="">Neutral</option>
+                        <option value="">Caótico Neutral</option>
+                        <option value="">Legal Maligno</option>
+                        <option value="">Neutral Maligno</option>
+                        <option value="">Caótico Maligno</option>
+                    </select>
+                    <p>Alineamiento</p>
+                </li>
+                <li class="header__container--description--exp">
+                    <input type="number">
+                    <p>Puntos de Experiencia</p>
+                </li>
+            </ul>
+        </section>
+    </header>
+
+
+    <section class="point">
+        <article class="point__characteristic">
+            <div class="point__characteristic__principal">
+                <div class="point__characteristic__principal--strength">
+                    <p>Fuerza</p>
+                    <h2></h2>
+                    <input type="number">
+                </div>
+                <div class="point__characteristic__principal--skill">
+                    <p>Destreza</p>
+                    <h2></h2>
+                    <input type="number">
+                </div>
+                <div class="point__characteristic__principal--constitution">
+                    <p>Constitución</p>
+                    <h2></h2>
+                    <input type="number">
+                </div>
+                <div class="point__characteristic__principal--inteligence">
+                    <p>Inteligencia</p>
+                    <h2></h2>
+                    <input type="number">
+                </div>
+                <div class="point__characteristic__principal--wisdom">
+                    <p>Sabiduría</p>
+                    <h2></h2>
+                    <input type="number">
+                </div>
+                <div class="point__characteristic__principal--charisma">
+                    <p>Carisma</p>
+                    <h2></h2>
+                    <input type="number">
+                </div>
+            </div>
+            <div class="point__characteristic__secundary">
+                <div class="point__characteristic__secundary--inspiration">
+                    <div id="boxInspiration" class="point__characteristic__secundary--inspiration--checkbox">
+                        <div id="inspiration" class="point__characteristic__secundary--inspiration--checkbox--pointRed">
+                        </div>
+                    </div>
+                    <h2>Inspiración</h2>
+                </div>
+                <div class="point__characteristic__secundary--bonus">
+                    <input type="number" name="" id="">
+                    <h2>Bonificador por <br> competencia</h2>
+                </div>
+                <div class="point__characteristic__secundary--salvation">
+                    <ul >
+                        <li>
+                            <input class="salvation" type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Fuerza</p>
+                        </li>
+                        <li>
+                            <input class="salvation" type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Destreza</p>
+                        </li>
+                        <li>
+                            <input class="salvation" type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Constitución</p>
+                        </li>
+                        <li>
+                            <input class="salvation" type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Inteligencia</p>
+                        </li>
+                        <li>
+                            <input class="salvation" type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Sabiduría</p>
+                        </li>
+                        <li>
+                            <input class="salvation" type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Carisma</p>
+                        </li>
+                    </ul>
+                    <p class="point__characteristic__secundary--salvation--title">Tiradas de Salvación</p>     
+                </div>
+                <div class="point__characteristic__secundary--abilities">
+                    <ul >
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Acrobacias (Des)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Atletismo (Fue)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>C. Arcano (Int)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Engaño (Car)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Historia (Int)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Interpretación (Car)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Intimidación (Car)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Investigación (Int)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Juego de Manos (Des)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Medicina (Sab)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Naturaleza (Int)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Percepción (Sab)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Perspicacia (Sab)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Persuasión (Car)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Religión (Int)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Sigilo (Des)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>Supervivencia (Sab)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="">
+                            <span></span>
+                            <p>T. con los Animales (Sab)</p>
+                        </li>
+                    </ul>
+                    <p class="point__characteristic__secundary--abilities--title">Habilidades</p>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="point__knock">
+            <div class="point__knock__basic">
+                <div class="point__knock__basic__shield">
+                    <div class="point__knock__basic__shield--part1">
+                        <h3>Clase de<br>Armadura</h3>
+                    </div>
+                    <div class="point__knock__basic__shield--part2">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="point__knock__basic__iniciative">
+                    <h3>Iniciativa</h3>
+                    <p></p>
+                </div>
+                <div class="point__knock__basic__speed">
+                    <h3>Velocidad</h3>
+                    <div>
+                        <p><span></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="point__knock__hit">
+                <div class="point__knock__hit__current">
+                    <p>puntos de golpe máximo <input id="maxHitPoints" type="text"></p>
+                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <h3>Puntos de Golpe Actuales</h3>
+                </div>
+                <div class="point__knock__hit__temporary">
+                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <h3>Puntos de Golpe Temporales</h3>
+                </div>
+            </div>
+
+            <div class="point__knock__roll">
+                <div class="point__knock__roll__rollhit">
+                    <p>Total <input id="roll" type="text"></p>
+                    <input type="text">
+                    <h3>Dados de Golpe</h3>
+                </div>
+                <div class="point__knock__roll__dead">
+                    <div class="point__knock__roll__dead--sucesses">
+                        <p>Éxitos</p>
+                        <div class="point__knock__roll__dead--sucesses--left vspoint"></div>
+                        <div class="point__knock__roll__dead--sucesses--center vspoint"><div></div></div>
+                        <div class="point__knock__roll__dead--sucesses--right vspoint"><div></div></div>
+                        <div class="point__knock__roll__dead--sucesses--connection"></div>
+                    </div>
+                    <div class="point__knock__roll__dead--failures">
+                        <p>Fallos</p>
+                        <div class="point__knock__roll__dead--failures--left vspoint"><div></div></div>
+                        <div class="point__knock__roll__dead--failures--center vspoint"><div></div></div>
+                        <div class="point__knock__roll__dead--failures--right vspoint"><div></div></div>
+                        <div class="point__knock__roll__dead--failures--connection"></div>
+                    </div>
+                    <h3>Salvaciones<br>Contra la Muerte</h3>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="point__backstory">
+            <div class="point__backstory__personality">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <p>Rasgos de Personalidad</p>
+            </div>
+            <div class="point__backstory__ideal">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <p>Ideales</p>
+            </div>
+            <div class="point__backstory__links">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <p>Vínculos</p>
+            </div>
+            <div class="point__backstory__defects">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <p>Defectos</p>
+            </div>
+        </article>
+
+
+        <article class="point__weapons">
+            <div class="point__weapons__equipped">
+                <div class="point__weapons__equipped__name">
+                    <p class="point__weapons__equipped__name--p">Nombre</p>
+                    <input class="point__weapons__equipped__name--input" type="text">    
+                    <input class="point__weapons__equipped__name--input" type="text">    
+                    <input class="point__weapons__equipped__name--input" type="text">    
+                </div>
+                <div class="point__weapons__equipped__bonus">
+                    <p class="point__weapons__equipped__bonus--p">Bonificador</p>
+                    <input class="point__weapons__equipped__bonus--input" type="number">    
+                    <input class="point__weapons__equipped__bonus--input" type="number">    
+                    <input class="point__weapons__equipped__bonus--input" type="number">  
+                </div>
+                <div class="point__weapons__equipped__hurt">
+                    <p class="point__weapons__equipped__hurt--p">Daño/Tipo</p>
+                    <input class="point__weapons__equipped__hurt--input" type="text">    
+                    <input class="point__weapons__equipped__hurt--input" type="text">    
+                    <input class="point__weapons__equipped__hurt--input" type="text">  
+                </div>
+            </div>
+            <textarea class="point__weapons--texarea" name="" id="" cols="30" rows="10"></textarea>
+            <h3 class="point__weapons--h3">Ataques y Lanzamientos de Conjuro</h3>
+        </article>
+
+
+        <article class="point__features">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <h3>Rasgos y Atributos</h3>
+        </article>
+
+
+        <article class="point__competencies">
+            <p><input type="number">Sabiduría (Percepción) Pasiva</p>
+            <div class="point__competencies__area">
+                <textarea name="" id="writeCompetencies" cols="30" rows="10"></textarea>
+                <h3>Otras Competencias e Idiomas</h3>
+            </div>
+        </article>
+
+
+        <article class="point__equipment">
+            <div class="point__equipment__cash">
+                <div class="point__equipment__cash__copper">
+                    <p>PC</p>
+                    <input type="number">
+                </div>
+                <div class="point__equipment__cash__silver">
+                    <p>PP</p>
+                    <input type="number">
+                </div>
+                <div class="point__equipment__cash__electro">
+                    <p>PE</p>
+                    <input type="number">
+                </div>
+                <div class="point__equipment__cash__gold">
+                    <p>PO</p>
+                    <input type="number">
+                </div>
+                <div class="point__equipment__cash__platinum">
+                    <p>PPT</p>
+                    <input type="number">
+                </div>
+            </div>
+            <div class="point__equipment__area">
+                <div class="point__equipment__area__description">
+                    <h5>Armadura</h5>
+                    <div>
+                        <p>Escudo:</p>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                    <h5>CA</h5>
+                </div>
+                <div class="point__equipment__area__inputArea">
+                    <input class="point__equipment__area__inputArea--inputText" type="text">
+                    <input class="point__equipment__area__inputArea--inputNumber" type="number">
+                </div>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <h3>Equipo</h3>    
+        </article>
+    </section>
+    
+
+</body>
+</html>
