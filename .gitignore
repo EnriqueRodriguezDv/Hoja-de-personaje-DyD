@@ -1,3 +1,6 @@
-.cache/**
-dist/**
-node_module/**
+.cache
+dist
+node_module
+*.ts
+*.scss
+*.map
